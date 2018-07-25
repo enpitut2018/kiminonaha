@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180725035653) do
+=======
+ActiveRecord::Schema.define(version: 20180725050659) do
+>>>>>>> 1d939ec1524ca0f767bc4d39f1d8aef288975700
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"
@@ -27,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180725035653) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
