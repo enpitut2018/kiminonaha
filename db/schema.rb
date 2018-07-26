@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180725050659) do
-=======
-ActiveRecord::Schema.define(version: 20180725075554) do
+ActiveRecord::Schema.define(version: 20180726052155) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -45,7 +42,6 @@ ActiveRecord::Schema.define(version: 20180725075554) do
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
->>>>>>> origin/master
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"
@@ -53,7 +49,23 @@ ActiveRecord::Schema.define(version: 20180725075554) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "tags_text"
+    t.string "Place"
+    t.string "Event"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "profiles_tags", id: false, force: :cascade do |t|
+    t.integer "tag_id", null: false
+    t.integer "profile_id", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

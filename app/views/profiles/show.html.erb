@@ -10,5 +10,20 @@
   <%= @profile.image %>
 </p>
 
+<p>
+  <strong>Event:</strong>
+  <%= @profile.Event %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @profile.Place %>
+</p>
+
+<p>
+  <strong>tags_text:</strong>
+  <%= @profile.tags_text %>
+</p>
+
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>

@@ -1,10 +1,10 @@
-<%= form_with(model: [@user, @profile], local: true) do |form| %>
-  <% if @profile.errors.any? %>
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
       <ul>
-      <% @profile.errors.full_messages.each do |message| %>
+      <% profile.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -19,6 +19,21 @@
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image, id: :profile_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Event %>
+    <%= form.text_field :Event, id: :profile_Event %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Place %>
+    <%= form.text_field :Place, id: :profile_Place %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :tags_text %>
+    <%= form.text_field :tags_text, id: :profile_image %>
   </div>
 
   <div class="actions">

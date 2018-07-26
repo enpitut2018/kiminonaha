@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @user = current_user
+    @profiles = current_user.profiles.all
   end
 
   # GET /profiles/1
@@ -14,30 +15,30 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
-    @user = User.find(params[:user_id])
-  end
-
-  # GET /profiles/1/edit
-  def edit
+    @user = current_user
+    @profile = @user.profiles.new
   end
 
   # POST /profiles
   # POST /profiles.json
   def create
-    
-    @user = User.find(params[:user_id])
+
+    @user = current_user
     @profile = @user.profiles.build(profile_params)
-    
+
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @user, notice: 'Profile was successfully created.' }
+        format.html { redirect_to profiles_path, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  # GET /profiles/1/edit
+  def edit
   end
 
   # PATCH/PUT /profiles/1
@@ -72,6 +73,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :image)
+      params.require(:profile).permit(:name, :image, :Event, :Place, :tags_text)
     end
 end
