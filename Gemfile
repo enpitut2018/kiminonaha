@@ -21,8 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # CarrierWave
 gem 'carrierwave'
-# rmagick
-gem 'rmagick'
+# minimagick
+gem 'mini_magick'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
