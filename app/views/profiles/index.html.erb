@@ -15,19 +15,8 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-<<<<<<< HEAD
-        
-        <td><%= profile.image %></td>
-        <td><%= link_to profile.name, profile %></td>
-=======
         <td><%= image_tag profile.image.to_s ,:size => '200x260' %></td>
-        <td><%= profile.name %></td>
-        <td><%= profile.Event %></td>
-        <td><%= profile.Place %></td>
-        <td><%= profile.tags_text %></td>
-        <td><%= profile.user_id %></td>
-        <td><%= link_to 'Show', profile %></td>
->>>>>>> f6d0e9c33b03ee215f4473fa587a6b3e159c82f8
+        <td><%= link_to profile.name, profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
