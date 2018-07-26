@@ -18,8 +18,7 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        
-        <td><%= profile.image %></td>
+        <td><%= image_tag profile.image.to_s ,:size => '200x260' %></td>
         <td><%= profile.name %></td>
         <td><%= profile.Event %></td>>
         <td><%= profile.Place %></td>>
