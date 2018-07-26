@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>画像:</strong>
   <%= image_tag @profile.image.to_s, size: '200x260' %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>氏名:</strong>
   <%= @profile.name %>
 </p>
 
@@ -25,5 +25,5 @@
   <%= @profile.tags_text %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to '編集', edit_profile_path(@profile) %> |
+<%= link_to 'マイページへ', profiles_path %>
