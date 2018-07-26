@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1>ログイン画面</h1>
 
 <div class="">
   <%= form_for(:session, url: login_path) do |f| %>
@@ -9,8 +9,8 @@
     <%= f.label :password %>
     <%= f.password_field :password, class: 'form-control' %>
 
-    <%= f.submit "Log in", class: "btn btn-primary" %>
+    <%= f.submit "ログイン", class: "btn btn-primary" %>
   <% end %>
 
-  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  <p>アカウントをお持ちではありませんか？今すぐ <%= link_to "Sign up", signup_path %>しましょう！</p>
 </div>
