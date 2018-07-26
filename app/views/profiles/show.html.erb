@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>氏名</strong>
   <%= @profile.name %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>画像</strong>
   <%= @profile.image %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to '編集', edit_profile_path(@profile) %> |
+<%= link_to 'マイページへ', profiles_path %>

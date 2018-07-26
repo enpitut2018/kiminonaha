@@ -11,7 +11,7 @@
 </p>
 
 
-<h1><%= @user.name %>'s Profiles</h1>
+<h1><%= @user.name %>さん　のマイページ</h1>
 
 <table>
   <thead>
@@ -27,9 +27,9 @@
       <tr>
         <td><%= profile.name %></td>
         <td><%= profile.image %></td>
-        <td><%= link_to 'Show', "#" %></td>
-        <td><%= link_to 'Edit', "#" %></td>
-        <td><%= link_to 'Destroy', "#", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', "#" %></td>
+        <td><%= link_to '編集', "#" %></td>
+        <td><%= link_to '登録削除', "#", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,8 +37,8 @@
 
 <br>
 
-<%= link_to 'New Profile', new_user_profile_path(@user) %>
+<%= link_to '知人の追加', new_user_profile_path(@user) %>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'アカウント編集', edit_user_path(@user) %> |
+<%= link_to '戻る', users_path %>
