@@ -6,10 +6,8 @@
 <table>
   <thead>
     <tr>
-      <th>氏名</th>
       <th>画像</th>
-      <th>タグ</th>
-      <th>User_id</th>
+      <th>氏名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +15,8 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.name %></td>
-        <td><%= profile.image %></td>
-        <td><%= profile.tags_text %></td>
-        <td><%= profile.user_id %></td>
-        <td><%= link_to '詳細', profile %></td>
+        <td><%= image_tag profile.image.to_s ,:size => '200x260' %></td>
+        <td><%= link_to profile.name, profile %></td>
         <td><%= link_to '編集', edit_profile_path(profile) %></td>
         <td><%= link_to '項目削除', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

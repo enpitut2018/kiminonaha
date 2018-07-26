@@ -1,13 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>氏名</strong>
+  <strong>画像:</strong>
+  <%= image_tag @profile.image.to_s, size: '200x260' %>
+</p>
+
+<p>
+  <strong>氏名:</strong>
   <%= @profile.name %>
 </p>
 
 <p>
-  <strong>画像</strong>
-  <%= @profile.image %>
+  <strong>Event:</strong>
+  <%= @profile.Event %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @profile.Place %>
+</p>
+
+<p>
+  <strong>tags_text:</strong>
+  <%= @profile.tags_text %>
 </p>
 
 <%= link_to '編集', edit_profile_path(@profile) %> |
