@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
+    @user = current_user
     @profiles = current_user.profiles.all
   end
 
@@ -27,7 +28,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @user, notice: 'Profile was successfully created.' }
+        format.html { redirect_to profiles_path, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
