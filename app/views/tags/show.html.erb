@@ -10,5 +10,13 @@
   <%= @tag.user %>
 </p>
 
+<ul>
+  <% @tag.profiles.all.each do |profile| %>
+    <li>
+      <%= link_to profile.name, profile_path(profile) %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Back', tags_path %>

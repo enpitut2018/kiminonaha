@@ -1,4 +1,9 @@
 class TagsController < InheritedResources::Base
+  def index
+    @user = current_user
+    @tags = @user.tags.all
+  end
+
 
   private
 
