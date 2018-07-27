@@ -8,3 +8,4 @@
 ## メンバー
 - [ghoostqq/潘 秋実](https://github.com/ghoostqq)
 - [はまきょー/浜田恭香](https://github.com/Hamakyou)
+- [So-shuang/鄭爽](https://github.com/So-shuang)
