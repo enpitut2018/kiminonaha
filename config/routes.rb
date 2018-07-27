@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
+  get 'static_pages/about'
+
   resources :tags
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -13,5 +17,5 @@ Rails.application.routes.draw do
   resources :profiles
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'users#new'
+  root 'static_pages#home'
 end
