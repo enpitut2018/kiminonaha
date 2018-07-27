@@ -1,9 +1,8 @@
 class Profile < ApplicationRecord
-
   mount_uploader :image, ImagesUploader
 	belongs_to :user
-
   has_and_belongs_to_many :tags
+  after_save :update_tags_based_on_elements
 
   def get_elements_array
     elements = Array.new
@@ -37,25 +36,25 @@ class Profile < ApplicationRecord
     end
   end
 
-  def change_event_to_tags_table
-    if ev = self.Event
-      change_element_to_tags ev
-    end
-  end
+  # def change_event_to_tags_table
+  #   if ev = self.Event
+  #     change_element_to_tags ev
+  #   end
+  # end
 
-  def change_place_to_tags_table
-    if pl = self.Place
-      change_element_to_tags pl
-    end
-  end
+  # def change_place_to_tags_table
+  #   if pl = self.Place
+  #     change_element_to_tags pl
+  #   end
+  # end
 
-  def change_tags_text_to_tags_table
-    if tags_texts = self.tags_text_split
-      tags_texts.each do |tag_text|
-        change_element_to_tags tag_text
-      end
-    end
-  end
+  # def change_tags_text_to_tags_table
+  #   if tags_texts = self.tags_text_split
+  #     tags_texts.each do |tag_text|
+  #       change_element_to_tags tag_text
+  #     end
+  #   end
+  # end
 
   def change_element_to_tags(el)
     if el
