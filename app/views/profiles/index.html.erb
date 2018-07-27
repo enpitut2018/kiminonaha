@@ -2,21 +2,13 @@
 
 <h1><%= @user.name%>さん のマイページ</h1>
 あなたの知人が表示されます<br>
-
-<!-- <table> -->
-  <!-- <thead>
-    <tr>
-      <th>画像</th>
-      <th>氏名</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead> -->
+<%= link_to '新規項目作成', new_profile_path %>
 
   <tbody>
-    <div class= "grid">
+    <div class="grid">
 
     <% @profiles.each do |profile| %>
-      <div class= "item">
+      <div class="item">
         <div><%= link_to image_tag( profile.image.to_s ,:size => '200x260'), profile %></div>
         <div><%= link_to profile.name, profile %></div>
         <div><%= link_to '編集', edit_profile_path(profile) %></div>
@@ -25,8 +17,6 @@
     <% end %>
    </div>
   </tbody>
-<!-- </table> -->
 
 <br>
 
-<%= link_to '新規項目作成', new_profile_path %>
