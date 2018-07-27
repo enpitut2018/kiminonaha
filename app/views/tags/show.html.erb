@@ -6,16 +6,14 @@
   <%= @tag.name %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @tag.user %>
-</p>
-
 <ul>
   <% @tag.profiles.all.each do |profile| %>
-    <li>
-      <%= link_to profile.name, profile_path(profile) %>
-    </li>
+    <div class= "item">
+      <div><%= link_to image_tag( profile.image.to_s ,:size => '200x260'), profile %></div>
+      <div><%= link_to profile.name, profile %></div>
+      <div><%= link_to '編集', edit_profile_path(profile) %></div>
+      <div><%= link_to '項目削除', profile, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
   <% end %>
 </ul>
 
