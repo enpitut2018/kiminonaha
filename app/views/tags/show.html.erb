@@ -6,16 +6,9 @@
   <%= @tag.name %>
 </p>
 
-<ul>
-  <% @tag.profiles.all.each do |profile| %>
-    <div class= "item">
-      <div><%= link_to image_tag( profile.image.to_s ,:size => '200x260'), profile %></div>
-      <div><%= link_to profile.name, profile %></div>
-      <div><%= link_to '編集', edit_profile_path(profile) %></div>
-      <div><%= link_to '項目削除', profile, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-    </div>
-  <% end %>
-</ul>
+<div class="grid">
+  <%= render @tag.profiles %>
+</div>
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Back', tags_path %>
