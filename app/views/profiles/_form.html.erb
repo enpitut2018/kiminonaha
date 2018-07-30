@@ -12,32 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, :氏名 %>
     <%= form.text_field :name, id: :profile_name %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :image, :画像%>
     <%= form.file_field :image, id: :profile_image %>
   </div>
 
   <div class="field">
-    <%= form.label :Event %>
+    <%= form.label :Event, :イベント %>
     <%= form.text_field :Event, id: :profile_Event %>
   </div>
 
   <div class="field">
-    <%= form.label :Place %>
+    <%= form.label :Place, :位置情報 %>
     <%= form.text_field :Place, id: :profile_Place %>
   </div>
 
   <div class="field">
-    <%= form.label :tags_text %>
+    <%= form.label :tags_text, :タグ %>
     <%= form.text_field :tags_text, id: :profile_tags_text %>
   </div>
 
   <div class="field">
-    <%= form.label :memo %>
+    <%= form.label :memo, :メモ %>
     <%= form.text_field :memo, id: :profile_memo %>
   </div>
 

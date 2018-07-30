@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>タグ名:</strong>
   <%= @tag.name %>
 </p>
 
@@ -10,7 +10,7 @@
   <%= render @tag.profiles %>
 </div>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<%= link_to 'タグを編集', edit_tag_path(@tag) %> |
+<%= link_to 'タグ一覧へ', tags_path %>
 
 </div>
