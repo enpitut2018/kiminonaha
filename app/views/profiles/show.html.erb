@@ -26,6 +26,11 @@
   <%= @profile.tags_text %>
 </p>
 
+<p>
+  <strong>memo:</strong>
+  <%= @profile.memo %>
+</p>
+
 <%= link_to '編集', edit_profile_path(@profile) %> |
 <%= link_to 'マイページへ', profiles_path %>
 

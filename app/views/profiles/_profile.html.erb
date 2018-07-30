@@ -1,6 +1,7 @@
 <div class="item">
   <div><%= link_to image_tag( profile.image.to_s ,:size => '200x260'), profile %></div>
   <div><%= link_to profile.name, profile %></div>
+  <div><%= profile.memo %></div>
   <% profile.tags.all.each do |tag| %>
     <%= link_to tag.name, tag, class: "badge badge-info" %>
   <% end %>

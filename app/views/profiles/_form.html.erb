@@ -30,10 +30,15 @@
     <%= form.label :Place %>
     <%= form.text_field :Place, id: :profile_Place %>
   </div>
-  
+
   <div class="field">
     <%= form.label :tags_text %>
-    <%= form.text_field :tags_text, id: :profile_image %>
+    <%= form.text_field :tags_text, id: :profile_tags_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo %>
+    <%= form.text_field :memo, id: :profile_memo %>
   </div>
 
   <div class="actions">
