@@ -1,12 +1,12 @@
 <div class="font_size">
 <p id="notice"><%= notice %></p>
 
-<h1>Tags</h1>
+<h1>タグ 一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>タグ名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,8 @@
     <% @tags.each do |tag| %>
       <tr>
         <td><%= link_to tag.name, tag %></td>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'タグを編集', edit_tag_path(tag) %></td>
+        <td><%= link_to 'タグを消去', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,6 +24,6 @@
 
 <br>
 
-<%= link_to 'New Tag', new_tag_path %>
+<%= link_to '新規タグ作成', new_tag_path %>
 
 </div>
