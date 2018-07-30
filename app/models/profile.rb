@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
 	belongs_to :user
   has_and_belongs_to_many :tags
   after_save :update_tags_based_on_elements
+  default_scope { order(created_at: :desc) }
 
   def get_elements_array
     elements = Array.new
