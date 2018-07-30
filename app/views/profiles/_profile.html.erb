@@ -1,6 +1,10 @@
 <div class="item">
   <div><%= link_to image_tag( profile.image.to_s ,:size => '200x260'), profile %></div>
   <div><%= link_to profile.name, profile %></div>
+  <div><%= profile.memo %></div>
+  <% profile.tags.all.each do |tag| %>
+    <%= link_to tag.name, tag, class: "badge badge-info" %>
+  <% end %>
   <div><%= link_to '編集', edit_profile_path(profile), class: "btn btn-sm btn-primary" %></div>
   <div><%= link_to '項目削除', profile, class: "btn btn-sm btn-secondary", method: :delete, data: { confirm: 'Are you sure?' } %></div>
 </div>
